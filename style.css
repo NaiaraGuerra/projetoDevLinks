@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  /*Ele realiza a medida dos padding e margin atras das bordas ex: borda do container*/
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --bg-a: rgba(255, 255, 255, 0.1);
+  --bg-a-hover: rgba(255, 255, 255, 0.05);
+  --bg-social-hover: rgba(255, 255, 255, 0.1);
+  --switch-bg: url(./assets/moon.svg);
+}
+
+.ligth {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --bg-a: rgba(0, 0, 0, 0.05);
+  --bg-a-hover: rgba(0, 0, 0, 0.02);
+  --bg-social-hover: rgba(0, 0, 0, 0.1);
+  --switch-bg: url(./assets/sun.svg);
+}
+
+body {
+  /*é possivel tranformar todo o codigo acima em uma unica linha*/
+  /*background:: color image repaet position/size; (exemplo abaixo de como ficaria)*/
+
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  width: 360px;
+  margin: 56px auto 0px;
+  padding: 0 24px;
+
+  /*como alinhas uma div ao meio que tenha uma medida fixa, é utilizado margin*/
+}
+
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img {
+  width: 112px;
+}
+
+#profile p {
+  margin-top: 8px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+/*switch*/
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg) no-repeat center;
+  border-radius: 50%;
+  border: 0;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.ligth #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  border: 1px solid var(--stroke-color);
+  background: var(---bg-a);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/*lista*/
+ul {
+  padding: 24px 0px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+} 
+
+ul li a {
+  border: 1px solid;
+  display: flex;
+  padding: 16px 24px;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-a);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.5s;
+}
+
+ul li a:hover {
+  background: var(--bg-a-hover);
+  border: 1px solid var(--text-color);
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 24px;
+}
+
+.social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+
+  transition: background 0.5s;
+  border-radius: 50%;
+}
+
+.social a:hover {
+  background: var(--bg-social-hover);
+  padding: 16px;
+}
+
+footer {
+  padding: 0px 24px;
+  text-align: center;
+  font-size: 14px;
+}
