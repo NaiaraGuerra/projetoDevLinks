@@ -74,12 +74,12 @@
     $('#switch button').on('click', function () {
       if ($('.conteudoHtml').hasClass('ligth')) {
         $('.conteudoHtml').removeClass('ligth');
-        $('#profile img').attr('src', '/assets/avatar.png');
+        $('#profile img').attr('src', './assets/avatar.png');
         $('#profile img').addClass('flip-vertical-left');
         $('#profile img').removeClass('flip-vertical-right');;
       } else {
         $('.conteudoHtml').addClass('ligth');
-        $('#profile img').attr('src', '/assets/avatar-light.png');
+        $('#profile img').attr('src', './assets/avatar-light.png');
         $('#profile img').addClass('flip-vertical-right');
         $('#profile img').removeClass('flip-vertical-left');
       }
