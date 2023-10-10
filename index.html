@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br" class="conteudoHtml">
-<!--ligth-->
 
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,8 +19,8 @@
   <div id="container">
     <div id="profile">
 
-      <img src="./assets/avatar.png"
-        alt="Imagem de uma personagem loira sorrindo, usando um fone de ouvido de gatinho cinza e rosa e fazendo paz e amor com os dedos" />
+      <img src="./assets/avatar.png" />
+
       <p>@NaiaraGuerra</p>
     </div>
     <div id="switch">
@@ -75,8 +74,14 @@
     $('#switch button').on('click', function () {
       if ($('.conteudoHtml').hasClass('ligth')) {
         $('.conteudoHtml').removeClass('ligth');
+        $('#profile img').attr('src', '/assets/avatar.png');
+        $('#profile img').addClass('flip-vertical-left');
+        $('#profile img').removeClass('flip-vertical-right');;
       } else {
         $('.conteudoHtml').addClass('ligth');
+        $('#profile img').attr('src', '/assets/avatar-light.png');
+        $('#profile img').addClass('flip-vertical-right');
+        $('#profile img').removeClass('flip-vertical-left');
       }
 
     });
